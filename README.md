@@ -9,9 +9,9 @@
 - Minimum 3 pages, one at "3 levels deep"
 
 ### To Do:
-[ ] Create content
-[ ] Decide on Bootstrap or not
-[ ] JS to calculate values
-[ ] JS to set dynamic variables
-[ ] Use variables in recipe.html
-[ ] Style UI
+- [ ] Create content
+- [ ] Decide on Bootstrap or not
+- [ ] JS to calculate values
+- [ ] JS to set dynamic variables
+- [ ] Use variables in recipe.html
+- [ ] Style UI
