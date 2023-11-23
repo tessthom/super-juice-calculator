@@ -73,7 +73,6 @@ h6 {
   font-size: 100%;
 }
 
-
 /* Colors */
 :root {
   --black: #343434;
@@ -90,15 +89,8 @@ h6 {
 }
 
 /* Global */
-/* body,
-html {
-  height: 100vh;
-} */
 body {
   line-height: 1;
-  /* padding: 0;
-  width: 100%;
-  position: relative; */
   background: var(--white);
   color: var(--black);
   font-family: 'Inter', sans-serif;
@@ -168,9 +160,6 @@ header {
   display: flex;
   align-items: center;
 }
-.nav__logo {
-  /* border: 1px solid red; */
-}
 .nav__logo__text {
   font-family: 'Noto Serif', serif;
   font-weight: 700;
@@ -183,12 +172,15 @@ header {
   display: flex;
   align-items: center;
   gap: 1em;
-  /* border: 1px solid red; */
 }
 .nav__item {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1rem;
+}
+.nav__item:hover {
+  line-height: 1.2em;
+  text-decoration: underline var(--black) 2px;
 }
 
 /* Footer */
@@ -197,12 +189,21 @@ footer.container {
   background: var(--dark-green);
   color: var(--text-white);
   text-align: center;
+  align-items: center;
+}
+.home footer p {
+  margin-bottom: 0;
+}
+footer .col__icons {
+  display: flex;
+  gap: 1em;
+}
+.col__icons img {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 /* Welcome Page */
-/* .btn.about {
-  background-color: var(--red);
-} */
 /* Welcome Grid Styles */
 .section-two .row, .section-three .row, .section-four .row {
   display: grid;
@@ -222,7 +223,7 @@ footer.container {
 .home h2 {
   margin-bottom: 1em;
 }
-.home p {
+.home main p {
   margin-bottom: 1em;
   line-height: 1.25;
 }
