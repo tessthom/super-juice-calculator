@@ -16,15 +16,16 @@
   <body class="home">
     <header>
       <div class="container row row__nav">
-        <nav class="nav">
-          <div class="nav__logo__wrapper">
-            <div class="nav__logo">
-              <a href="#">
-                <img src="images/citrus-64.png" alt="Super Juice calculator" />
-              </a>
-            </div>
-            <p class="nav__logo__text">Super Juice</p>
+        <div class="nav__logo__wrapper">
+          <div class="nav__logo">
+            <a href="#">
+              <img src="images/citrus-64.png" alt="Super Juice calculator" />
+            </a>
           </div>
+          <p class="nav__logo__text"><span class="nav__logo__text__span">Super Juice</span></p>
+        </div>
+
+        <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
               <a href="index.html">Home</a>
@@ -37,6 +38,10 @@
             </li>
           </ul>
         </nav>
+
+        <button class="nav-toggle" aria-label="open navigation">
+          <span class="hamburger"></span>
+        </button>
       </div>
     </header>
 
@@ -113,16 +118,18 @@
       </section>
     </main>
 
-    <footer class="container row footer">
-      <div class="col">
-        <p>Tess Thomas &copy; <span class="year"></span></p>
-      </div>
-      <div class="col col__icons">
-        <a href="https://www.linkedin.com/in/tess-thomas-dev/" target="_blank"><img src="images/linkedin.svg" alt="linked in icon" /></a>
-        <a href="https://github.com/tessthom" target="_blank"><img src="images/github-mark.svg" alt="github icon" /></a>
+    <footer class="container footer">
+      <div class="row">
+        <div class="col">
+          <p>Tess Thomas &copy; <span class="year"></span></p>
+        </div>
+        <div class="col col__icons">
+          <a href="https://www.linkedin.com/in/tess-thomas-dev/" target="_blank"><img src="images/linkedin.svg" alt="linked in icon" /></a>
+          <a href="https://github.com/tessthom" target="_blank"><img src="images/github-mark.svg" alt="github icon" /></a>
+        </div>
       </div>
     </footer>
 
-    <script type="module" src="scripts/app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
