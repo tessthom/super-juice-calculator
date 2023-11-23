@@ -1,4 +1,7 @@
 /* Condensed Meyer Reset */
+* {
+  box-sizing: border-box;
+}
 body,
 div,
 dl,
@@ -28,6 +31,9 @@ td {
 fieldset,
 img {
   border: 0;
+}
+img {
+  max-width: 100%;
 }
 table {
   border-collapse: collapse;
@@ -66,34 +72,28 @@ h6 {
   font-weight: normal;
   font-size: 100%;
 }
-q:before,
-q:after {
-  content: '';
-}
-abbr,
-acronym {
-  border: 0;
-}
-* {
-  box-sizing: border-box;
-}
+
 
 /* Colors */
 :root {
   --black: #343434;
   --white: #fffaf0;
+  --text-white: #FFFFFF;
+  --cream: #FFDAB9;
+  --blue: #1C3144;
+  --dark-green: #3E826C;
   --green: #60d394;
   --light-green: #aaf683;
   --yellow: #ffd97d;
   --pink: #ff9b85;
-  --red: #ee6055;
+  --red: #f17067;
 }
 
 /* Global */
-body,
+/* body,
 html {
   height: 100vh;
-}
+} */
 body {
   line-height: 1;
   /* padding: 0;
@@ -102,17 +102,17 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
 }
 main {
   height: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid blue;
 }
 .container {
   width: 80%;
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .row {
@@ -120,26 +120,41 @@ main {
   justify-content: space-between
 }
 h1, h2 {
-  /* font-family: 'Noto Serif', serif; */
-  font-weight:700
+  font-family: 'Noto Serif', serif;
+  font-weight:800;
+  line-height: 1;
 }
 h1 {
-  font-size: 1.5rem;
-  margin-left: .25em;
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+section {
+  padding: 4em 0;
 }
 .btn {
   display: inline-block;
   background: var(--black);
   color: var(--white);
   font-weight: 600;
+  font-size: 1.15rem;
   padding: .75em 2em;
   border-radius: 2rem;
+  text-transform: uppercase;
 }
 
 /* Navigation */
 header {
-  background: #f5f7d1;
   padding: 1em 0;
+  background: var(--white);
+  color: var(--black);
+}
+.container.row__nav, .container.footer {
+  width: 100%;
+  max-width: 900px;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 .row__nav {
   display: block; /* this works around row style */
@@ -152,10 +167,15 @@ header {
 .nav__logo__wrapper {
   display: flex;
   align-items: center;
-  border: 1px solid green;
 }
 .nav__logo {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+.nav__logo__text {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: .25em;
 }
 .nav__list {
   margin: 0;
@@ -163,15 +183,82 @@ header {
   display: flex;
   align-items: center;
   gap: 1em;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .nav__item {
   text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer.container {
+  padding: 2em 0;
+  background: var(--dark-green);
+  color: var(--text-white);
+  text-align: center;
 }
 
 /* Welcome Page */
-h2 {
-  font-size: 2rem;
+/* .btn.about {
+  background-color: var(--red);
+} */
+/* Welcome Grid Styles */
+.section-two .row, .section-three .row, .section-four .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  justify-items: center;
+  align-items: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+}
+.section-three .col__text {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.section-three .col__img {
+  grid-column: 1 / 2;
+}
+.home h2 {
+  margin-bottom: 1em;
+}
+.home p {
+  margin-bottom: 1em;
+  line-height: 1.25;
+}
+.col__img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.intro {
+  background: var(--yellow);
+  padding: 5em 0;
+  text-align: center;
+}
+.intro__text {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+.intro__title {
+  font-size: 3rem;
+}
+.section-two {
+  background: var(--white);
+}
+.section-three {
+  background: var(--black);
+  color: var(--text-white);
+}
+.section-three .btn.calc {
+  background: var(--white);
+  color: var(--black);
+}
+.section-four {
+  background: var(--cream);
 }
 
 /* Calculator Page */
