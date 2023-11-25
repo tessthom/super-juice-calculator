@@ -21,7 +21,9 @@
               <img src="images/citrus-64.png" alt="Super Juice calculator" />
             </a>
           </div>
-          <p class="nav__logo__text"><span class="nav__logo__text__span">Super Juice</span></p>
+          <p class="nav__logo__text">
+            <span class="nav__logo__text__span">Super Juice</span>
+          </p>
         </div>
 
         <nav class="nav">
@@ -46,10 +48,27 @@
 
     <main>
       <div class="calc-container">
-        <div class="calc-img-wrapper">
-          <div class="container">
-            <h1>Super Juice Calculator</h1>
-          </div>
+        <div class="">
+          <h1>Super Juice Calculator</h1>
+          <p>TO DO: Fill in with explanation of calculator's formula and intro?</p>
+
+          <form id="calculator" method="GET" action="#">
+            <label for="citrusType">Select fruit:</label>
+            <select name="citrusType" id="citrusType">
+              <option value="lime">Lime</option>
+              <option value="lemon">Lemon</option>
+              <!-- Add more options later -->
+            </select>
+
+            <div class="toggle-container">
+              <label for="inputValue">Amount of juice you want:</label>
+              <input id="inputValue" type="number" name="inputValue" step="1" required>
+            </div>
+
+            <button type="button" id="toggleJuiceBtn" onclick="toggleInputType()">icon</button>
+
+            <button type="button">Calculate</button>
+          </form>
         </div>
       </div>
     </main>
@@ -60,8 +79,12 @@
           <p>Tess Thomas &copy; <span class="year"></span></p>
         </div>
         <div class="col col__icons">
-          <a href="https://www.linkedin.com/in/tess-thomas-dev/" target="_blank"><img src="images/linkedin.svg" alt="linked in icon" /></a>
-          <a href="https://github.com/tessthom" target="_blank"><img src="images/github-mark.svg" alt="github icon" /></a>
+          <a href="https://www.linkedin.com/in/tess-thomas-dev/" target="_blank"
+            ><img src="images/linkedin.svg" alt="linked in icon"
+          /></a>
+          <a href="https://github.com/tessthom" target="_blank"
+            ><img src="images/github-mark.svg" alt="github icon"
+          /></a>
         </div>
       </div>
     </footer>
