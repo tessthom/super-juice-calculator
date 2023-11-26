@@ -48,9 +48,35 @@
 
     <main>
       <div class="calc-container">
-        <div class="">
+        <div class="container">
           <h1>Super Juice Calculator</h1>
-          <p>TO DO: Fill in with explanation of calculator's formula and intro?</p>
+
+          <div class="calc-text__wrapper">
+            <img
+              src="images/calculator.png"
+              alt=""
+              loading="lazy"
+              class="section__float-img calc-img right" />
+
+            <section>
+              <h2>*This calculator takes two inputs:</h2>
+              <ul>
+                <li>The type of citrus.</li>
+                <li>
+                  Either the weight of peels you're starting with in grams,
+                  <i>or</i> the amount of juice you'd like to make in
+                  milliliters.
+                </li>
+              </ul>
+              <p>
+                You can toggle between peel weight or juice volume using the
+                button next to the text box. Citrus selection will determine
+                which formula is used. See the
+                <a href="about.html">About page</a> for more detail on formula
+                specs.
+              </p>
+            </section>
+          </div>
 
           <form id="calculator" method="GET" action="#">
             <label for="citrusType">Select fruit:</label>
@@ -61,13 +87,30 @@
             </select>
 
             <div class="toggle-container">
-              <label for="inputValue">Amount of juice you want:</label>
-              <input id="inputValue" type="number" name="inputValue" step="1" required>
+              <label for="inputValue" class="inputTypeLabel"
+                >Amount of juice you want (ml):</label
+              >
+              <div class="input-container">
+                <input
+                  id="inputValue"
+                  type="number"
+                  name="inputValue"
+                  class="inputTypeInput"
+                  required />
+                <span class="toggleInputSpan"></span>
+                <button
+                  type="button"
+                  id="toggleInputBtn"
+                  onclick="toggleInputType()">
+                  <img src="images/toggle.svg" alt="toggle input type" />
+                </button>
+              </div>
+              <span class="error"></span>
             </div>
 
-            <button type="button" id="toggleJuiceBtn" onclick="toggleInputType()">icon</button>
-
-            <button type="button">Calculate</button>
+            <button type="button" id="submitBtn" onclick="calculateRecipe()">
+              Calculate
+            </button>
           </form>
         </div>
       </div>

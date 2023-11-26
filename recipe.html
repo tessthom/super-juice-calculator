@@ -65,6 +65,18 @@
       </div>
     </footer>
 
+    <script>
+      window.onload = function () {
+        document.querySelector('.juiceAmount').innerHTML = sessionStorage.getItem('juiceAmount');
+        document.querySelector('.peelWeight').innerHTML = sessionStorage.getItem('peelWeight');
+        document.querySelector('.totalWaterWeight').innerHTML = sessionStorage.getItem('totalWaterWeight');
+        document.querySelector('.totalAcidPercentage').innerHTML = sessionStorage.getItem('totalAcidPercentage');
+        document.querySelector('.totalAcidWeight').innerHTML = sessionStorage.getItem('totalAcidWeight');
+        document.querySelector('.citricAcid').innerHTML = sessionStorage.getItem('citricAcid');
+        document.querySelector('.malicAcid').innerHTML = sessionStorage.getItem('malicAcid');
+      }
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>
