@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Specs</title>
+    <title>Recipe - Super Juice</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="images/citrus-16.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,7 @@
       rel="stylesheet" />
   </head>
 
-  <body>
+  <body class="recipe">
     <header>
       <div class="container row row__nav">
         <div class="nav__logo__wrapper">
@@ -47,7 +47,106 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <div class="heading container">
+        <h1>Recipe</h1>
+      </div>
+
+      <div class="container">
+        <h2><span class="capFruit"></span> Super Juice</h2>
+        <!-- <div class="row"> -->
+        <div class="supplies-container">
+          <h3>Supplies:</h3>
+          <ul class="list list__supplies">
+            <li>
+              Non-reactive container (think wide-mouthed mason jar or cambro)
+              with lid.
+            </li>
+            <li>
+              Stick blender or standard blender. If using a stick blender, be
+              sure your container can accommodate it.
+            </li>
+            <li>Scale accurate to the gram</li>
+            <li>Liquid measuring cup</li>
+            <li>Peeler or excellent pairing knife skills</li>
+            <li>Juicing implement</li>
+            <li>Cheesecloth or nut milk bag for fine straining</li>
+          </ul>
+        </div>
+
+        <div class="ingredients-container">
+          <h3>Ingredients:</h3>
+
+          <ul class="list list__ingredients">
+            <li>
+              <span class="peelWeight"></span>g
+              <span class="fruit"></span> peel*
+            </li>
+            <li>Reserved peeled <span class="fruit"></span>s</li>
+            <li><span class="citricAcid"></span>g citric acid</li>
+            <li><span class="malicAcid"></span>g malic acid</li>
+            <li><span class="totalWaterWeight"></span>ml water</li>
+          </ul>
+          <small>
+            *When peeling your citrus, try to minimize the amount of pith
+            (the bitter, white, inner layer of the rind).
+          </small>
+        </div>
+
+        <div class="directions-container">
+          <h3>Directions:</h3>
+          <ol class="list list__directions">
+            <li>
+              Place the peels in a lidded, non-reactive container (a wide-mouth
+              mason jar works well) and add your powdered acid(s).
+            </li>
+            <li>
+              Secure the container's lid and shake well, coating the peels in
+              the acid as best you can.
+            </li>
+            <li>
+              Let jar rest, unrefrigerated, for up to 2 hours. This is our oleo
+              citrate!
+            </li>
+            <li>Juice reserved fruit into separate container.</li>
+            <li>
+              If using stick blender, add water and fresh juice to oleo citrate
+              container. If using standard blender, dump oleo citrate into the
+              blender, then add your water, first pouring it into the oleo
+              citrate container, then into the blender, to get all that good
+              oleo citrate into the blender.
+            </li>
+            <li>
+              Blend for 30 seconds. You're not trying to make a puree, just to
+              blitz the peels and incorporate everything. Be wary of over
+              blending and creating any heat.
+            </li>
+            <li>
+              Strain mixture into clean, non-reactive container of your choice.
+            </li>
+            <li>Store in fridge and use for 1-2 weeks.</li>
+          </ol>
+        </div>
+
+        <div class="notes-container">
+          <h3>Notes:</h3>
+          <p>
+            My <span class="fruit"></span> recipe uses a total acid percentage
+            of <span class="totalAcidPercentage"></span>% (<span
+              class="citricAcidPercent"></span
+            >% citric, and <span class="malicAcidPercent"></span>% malic).
+          </p>
+          <p>
+            At these percentages, your total acid weight is
+            <span class="totalAcidWeight"></span>g.
+          </p>
+          <p>
+            Using this information, you can adjust to taste per your individual
+            needs if you want.
+          </p>
+        </div>
+      </div>
+    </main>
 
     <footer class="container footer">
       <div class="row">
@@ -66,17 +165,35 @@
     </footer>
 
     <script>
+      // This fn runs when the page finishes loading, so all DOM elements are available
       window.onload = function () {
-        document.querySelector('.juiceAmount').innerHTML = sessionStorage.getItem('juiceAmount');
-        document.querySelector('.peelWeight').innerHTML = sessionStorage.getItem('peelWeight');
-        document.querySelector('.totalWaterWeight').innerHTML = sessionStorage.getItem('totalWaterWeight');
-        document.querySelector('.totalAcidPercentage').innerHTML = sessionStorage.getItem('totalAcidPercentage');
-        document.querySelector('.totalAcidWeight').innerHTML = sessionStorage.getItem('totalAcidWeight');
-        document.querySelector('.citricAcid').innerHTML = sessionStorage.getItem('citricAcid');
-        document.querySelector('.malicAcid').innerHTML = sessionStorage.getItem('malicAcid');
-      }
+        // Creates an array of all the key:value pairs I need to access in sessionStorage
+        const keys = [
+          'fruit',
+          'capFruit',
+          'citricAcidPercent',
+          'malicAcidPercent',
+          'juiceAmount',
+          'peelWeight',
+          'totalWaterWeight',
+          'totalAcidPercentage',
+          'totalAcidWeight',
+          'citricAcid',
+          'malicAcid',
+        ];
+        // Loops thru each key and sets innerHTML of the corresponding element
+        keys.forEach((key) => {
+          const elements = document.querySelectorAll(`.${key}`); // gets tag with matching class
+          const value = sessionStorage.getItem(key); // gets value from sessionStorage
+          // If tag and value exist, sets innerHTML, avoiding null errors that would occur if tried to set innerHTML of non-existent tag bc it would be null
+          elements.forEach((element) => {
+            if (element && value) {
+              element.innerHTML = value;
+            }
+          });
+        });
+      };
     </script>
-
     <script src="script.js"></script>
   </body>
 </html>
