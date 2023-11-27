@@ -26,7 +26,7 @@ function validateInput(input) {
     return false;
   } else {
     error.textContent = '';
-    console.log('input is valid and the validation function has run')
+    console.log('input is valid and the validation function has run');
     return true;
   }
 }
@@ -126,18 +126,22 @@ function calculateRecipe() {
   if (fruit === 'lime') {
     totalAcidPercentage = 0.06;
     totalAcidWeight = totalWaterWeight * totalAcidPercentage;
-    citricAcid = (totalAcidWeight * 0.45).toFixed(1);
-    malicAcid = (totalAcidWeight * 0.15).toFixed(1);
+    // citricAcid = (totalAcidWeight * 0.45).toFixed(1);
+    // malicAcid = (totalAcidWeight * 0.15).toFixed(1);
+    citricAcid = (totalWaterWeight * 0.045).toFixed(2);
+    malicAcid = (totalWaterWeight * 0.015).toFixed(2);
   } else if (fruit === 'lemon') {
     totalAcidPercentage = 0.05;
     totalAcidWeight = totalWaterWeight * totalAcidPercentage;
-    citricAcid = (totalAcidWeight * 0.9).toFixed(1);
-    malicAcid = (totalAcidWeight * 0.1).toFixed(1);
+    // citricAcid = (totalAcidWeight * 0.5).toFixed(1);
+    // malicAcid = (totalAcidWeight * 0.1).toFixed(1);
+    citricAcid = (totalWaterWeight * 0.05).toFixed(2);
+    malicAcid = (totalWaterWeight * 0.01).toFixed(2);
   }
-  console.log(`fruit specific calculation has been done and the variables are fruit: ${fruit}, juiceAmount: ${juiceAmount}, peelWeight: ${peelWeight}, citricAcidPercent: ${citricAcidPercent}, $malicAcidPercent: ${malicAcidPercent}, totalAcidPercentage: ${totalAcidPercentage}, totalAcidWeight: ${totalAcidWeight}, citricAcid: ${citricAcid}, malicAcid: ${malicAcid}.`);
-  //console.log(fruit, citricAcidPercent, malicAcidPercent, juiceAmount, peelWeight, totalWaterWeight, totalAcidPercentage, totalAcidWeight, citricAcid, malicAcid);
+
   // format acid percentage for render
   totalAcidPercentage = (totalAcidPercentage * 100).toFixed(1);
+
   // call fn to insert results into recipe.html DOM
   insertResults(
     fruit,
