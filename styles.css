@@ -106,7 +106,7 @@ main {
 }
 .container {
   width: 85%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   /* position for nav-toggle to reference */
   position: relative;
@@ -161,14 +161,6 @@ header {
 .row__nav {
   display: block; /* this works around row style */
 }
-/* .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-} */
 .nav-toggle {
   cursor: pointer;
   border: 0;
@@ -302,7 +294,6 @@ footer .col__icons {
 }
 
 /* Welcome Page */
-/* Welcome Grid Styles */
 .section-two .row,
 .section-three .row,
 .section-four .row {
@@ -311,7 +302,6 @@ footer .col__icons {
   gap: 1em;
   justify-items: center;
   align-items: center;
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
 }
 .home h2 {
   margin-bottom: 1em;
@@ -374,7 +364,7 @@ footer .col__icons {
 }
 .section__float-img.calc-img {
   border-radius: 0;
-  shape-outside:polygon(43px -1px, 105.94% 17px, 86.94% 104.12%, 8px 90.74%);
+  shape-outside: polygon(43px -1px, 105.94% 17px, 86.94% 104.12%, 8px 90.74%);
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -498,19 +488,10 @@ span.error {
   margin: 0 auto;
   padding: 4rem 0 0;
   text-align: center;
-  /* display: grid;
-  justify-content: start;
-  align-items: center;
-  grid: 1fr / 1fr; */
   width: 85%;
   max-width: 900px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 .section__float-img {
-  /* grid-column: 1 / 2;
-  grid-row: 1 / 2; */
   width: 150px;
   max-width: 150px;
   shape-outside: circle(50%);
@@ -536,6 +517,14 @@ span.error {
   background-color: var(--black);
   color: var(--white);
 }
+.about main a {
+  text-decoration: underline var(--black) 2px;
+  cursor: pointer;
+}
+.about main a:hover {
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
 
 /* Recipe */
 .recipe main {
@@ -554,7 +543,7 @@ span.error {
 .recipe .directions-container {
   padding: 1em;
 }
-.recipe h2, .recipe h3, .recipe p {
+.recipe h2, .recipe h3, .recipe main p {
   margin: .5em 0;
 }
 .recipe .ingredients-container h3 {
@@ -699,7 +688,7 @@ span.error {
     background: var(--white);
     display: grid;
     grid-template-columns: 1fr 40%;
-    grid-template-rows: auto-fit;
+    grid-template-rows: auto;
   }
   .about .heading-container {
     background: var(--cream);
@@ -716,7 +705,7 @@ span.error {
   .about main .container {
     margin: 0 auto;
     width: 100%; /* reset from 85% to make color span full page */
-    max-width: 900; /* reset from single col max */
+    max-width: 900px; /* reset from single col max */
   }
   .about section .section__float-img.left {
     max-width: 250px;
@@ -807,10 +796,10 @@ span.error {
     padding-top: 1rem;
     padding-bottom: 5rem;
   }
-  .recipe .container {
+  .recipe main .container {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: auto-fit;
+    grid-template-rows: auto;
   }
   .recipe .container h2 {
     grid-column: 1 / 3;

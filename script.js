@@ -65,7 +65,6 @@ function insertResults(
 // Input type toggle -------------------------
 const toggleInputBtn = document.getElementById('toggleInputBtn');
 
-// function that changes the input label and name if input is toggled between final desired amount of juice or weight of peels when user clicks on the inputTypeBtn button
 function toggleInputType() {
   const inputLabel = document.querySelector('.inputTypeLabel');
   if (inputLabel.textContent === 'Amount of juice you want (ml):') {
@@ -87,7 +86,7 @@ function calculateRecipe() {
   let fruit = document.getElementById('fruit').value;
   let capFruit = fruit.charAt(0).toUpperCase() + fruit.slice(1);
 
-  // set each acid percentage based on fruit selected, to provide details for in recipe
+  // set each acid percentage for recipe notes based on fruit selected
   let citricAcidPercent;
   let malicAcidPercent;
   if (fruit === 'lime') {
@@ -98,10 +97,11 @@ function calculateRecipe() {
     malicAcidPercent = 1;
   }
 
-  // if input label is for juice, assign value to juiceAmount variable, else assign value to a peelWeight variable
+  // reference variables that rely on input type toggle
   let juiceAmount;
   let peelWeight;
   let totalWaterWeight;
+  // assign values based on input type
   if (
     document.querySelector('.inputTypeLabel').textContent ===
     'Amount of juice you want (ml):'
@@ -115,14 +115,13 @@ function calculateRecipe() {
     juiceAmount = totalWaterWeight;
   }
 
-  // the output variables are: peelWeight, juiceAmount, totalWaterWeight, totalAcidPercentage (which is 6% for limes), totalAcidWeight citricAcid, malicAcid. The formula used if limes are the selected fruit option is: peelWeight * 10 = totalWaterWeight, totalWaterWeight * totalAcidPercentage = totalAcidWeight, citricAcid = totalAcidWeight * .45, malicAcid = totalAcidWeight * .15.
-  // instantiate remaining calculated variables
+  // remaining calculated variables
   let totalAcidPercentage;
   let totalAcidWeight;
   let citricAcid;
   let malicAcid;
 
-  // if lime is selected, set totalAcidPercentage to 6%, citricAcid being 4.5% of totalAcidWeight, malicAcid being 1.5% of totalAcidWeight
+  // calculate remaining recipe variables based on fruit selected
   if (fruit === 'lime') {
     totalAcidPercentage = 0.06;
     totalAcidWeight = totalWaterWeight * totalAcidPercentage;

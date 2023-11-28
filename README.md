@@ -17,4 +17,4 @@
 - [x] Style UI
 
 ### Image citation:
-The site logo and all decorative images were created by myself, Tess Thomas, in Figma. The social  media icons in the footer are CC0 and sourced from the LinkedIn and GitHub logo documentation. The arrow icon used for the input toggle button is also CC0, from feathericons.com (an SVG icon resource made by "@colebemis").
+The site logo and all decorative images were created by myself, Tess Thomas, in Figma. The social media icons in the footer are CC0 and sourced directly from LinkedIn and GitHub logo developer resources. The arrow icon used for the input toggle button is also CC0, from feathericons.com (an SVG icon resource made by "@colebemis").
