@@ -197,6 +197,9 @@ header {
 .hamburger::after {
   transform: translateY(0.5em);
 }
+.nav__logo {
+  width: 5rem;
+}
 .nav__logo__wrapper {
   display: flex;
   align-items: center;
