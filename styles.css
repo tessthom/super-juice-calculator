@@ -193,10 +193,24 @@ header {
 }
 .hamburger::before {
   transform: translateY(-0.75em);
+  transition: transform 0.3s ease;
 }
 .hamburger::after {
   transform: translateY(0.5em);
+  transition: transform 0.3s ease;
 }
+/* Hamburger animation on click */
+.nav-toggle.open .hamburger {
+  background: transparent;
+  transition: background 0.2s ease;
+}
+.nav-toggle.open .hamburger::after {
+  transform: translateY(-0.1rem) rotate(45deg);
+}
+.nav-toggle.open .hamburger::before {
+  transform: translateY(0.1rem) rotate(-45deg);
+}
+
 .nav__logo {
   width: 5rem;
 }

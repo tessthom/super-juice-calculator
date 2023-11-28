@@ -4,6 +4,7 @@ const nav = document.querySelector('.nav');
 
 navToggle.addEventListener('click', () => {
   nav.classList.toggle('nav--visible');
+  navToggle.classList.toggle('open');
 });
 
 // Get current year for footer -------------------------
