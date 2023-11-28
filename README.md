@@ -4,13 +4,12 @@
 ### Specifications:
 - Mobile-first
 - Responsive
-- Use either Bootstrap or CSS grid
-- Custom styling
+- Utilize CSS grid 
+- Create competitive edge feature
 - Minimum 3 pages, one at "3 levels deep"
 
 ### To Do:
 - [x] Create content
-- [x] Decide on Bootstrap or not
 - [x] JS to calculate values
 - [x] JS to set dynamic variables
 - [x] Use variables in recipe.html
